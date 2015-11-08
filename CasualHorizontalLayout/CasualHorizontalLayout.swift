@@ -79,6 +79,20 @@ class CasualHorizontalLayout : UICollectionViewFlowLayout {
             panningTouchLocation = scrollView.panGestureRecognizer.locationOfTouch(0, inView: scrollView)
         }
         
+        var pannedCellFrame: CGRect = CGRectZero
+        if let view = scrollView.hitTest(panningTouchLocation, withEvent: nil), superview = view.superview as? UICollectionViewCell {
+            pannedCellFrame = superview.frame
+        };
+        
+        let panningLeft = (scrollView.panGestureRecognizer.velocityInView(scrollView).x < 0)
+        
+        var disturbanceOrigin: CGFloat
+        if (panningLeft) {
+            disturbanceOrigin = pannedCellFrame.origin.x + pannedCellFrame.size.width
+        } else {
+            disturbanceOrigin = pannedCellFrame.origin.x
+        }
+        
         for item in newlyVisibleItems {
             var center = item.center
             
@@ -89,7 +103,7 @@ class CasualHorizontalLayout : UICollectionViewFlowLayout {
             springBehavior.frequency = self.frequency
             
             if (!CGPointEqualToPoint(CGPointZero, panningTouchLocation)) {
-                let distance = fabs(panningTouchLocation.x - springBehavior.anchorPoint.x)
+                let distance = fabs(disturbanceOrigin - springBehavior.anchorPoint.x)
                 let resistance = distance / self.resistance
                 
                 if (self.latestDelta < 0) {
@@ -118,11 +132,12 @@ class CasualHorizontalLayout : UICollectionViewFlowLayout {
     override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
         let scrollView = self.collectionView!
         
+        var panningTouchLocation: CGPoint
         if (scrollView.panGestureRecognizer.numberOfTouches() < 1) {
-            return false
+            panningTouchLocation = CGPointZero
+        } else {
+            panningTouchLocation = scrollView.panGestureRecognizer.locationOfTouch(0, inView: scrollView)
         }
-        
-        let panningTouchLocation = scrollView.panGestureRecognizer.locationOfTouch(0, inView: scrollView)
         
         var pannedCellFrame: CGRect = CGRectZero
         if let view = scrollView.hitTest(panningTouchLocation, withEvent: nil), superview = view.superview as? UICollectionViewCell {
@@ -155,7 +170,7 @@ class CasualHorizontalLayout : UICollectionViewFlowLayout {
             if (panningLeft) {
                 shouldUseBehavior = attachmentBehavior.anchorPoint.x > disturbanceOrigin
             } else {
-                shouldUseBehavior =  attachmentBehavior.anchorPoint.x < pannedCellFrame.origin.x
+                shouldUseBehavior =  attachmentBehavior.anchorPoint.x < disturbanceOrigin
             }
             
             if (shouldUseBehavior) {
