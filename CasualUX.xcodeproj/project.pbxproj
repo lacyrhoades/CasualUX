@@ -12,16 +12,18 @@
 		0FF31CB31BE861F600A8B1D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF31CB11BE861F600A8B1D6 /* Main.storyboard */; };
 		0FF31CB51BE861F600A8B1D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF31CB41BE861F600A8B1D6 /* Assets.xcassets */; };
 		0FF31CB81BE861F600A8B1D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF31CB61BE861F600A8B1D6 /* LaunchScreen.storyboard */; };
+		0FF31CC01BE8640A00A8B1D6 /* CasualHorizontalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF31CBF1BE8640A00A8B1D6 /* CasualHorizontalLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0FF31CAA1BE861F600A8B1D6 /* ExtremeUX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtremeUX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FF31CAA1BE861F600A8B1D6 /* CasualUX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CasualUX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF31CAD1BE861F600A8B1D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FF31CAF1BE861F600A8B1D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0FF31CB21BE861F600A8B1D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0FF31CB41BE861F600A8B1D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FF31CB71BE861F600A8B1D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FF31CB91BE861F600A8B1D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FF31CBF1BE8640A00A8B1D6 /* CasualHorizontalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasualHorizontalLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +40,7 @@
 		0FF31CA11BE861F600A8B1D6 = {
 			isa = PBXGroup;
 			children = (
-				0FF31CAC1BE861F600A8B1D6 /* ExtremeUX */,
+				0FF31CAC1BE861F600A8B1D6 /* CasualUX */,
 				0FF31CAB1BE861F600A8B1D6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,12 +48,12 @@
 		0FF31CAB1BE861F600A8B1D6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0FF31CAA1BE861F600A8B1D6 /* ExtremeUX.app */,
+				0FF31CAA1BE861F600A8B1D6 /* CasualUX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0FF31CAC1BE861F600A8B1D6 /* ExtremeUX */ = {
+		0FF31CAC1BE861F600A8B1D6 /* CasualUX */ = {
 			isa = PBXGroup;
 			children = (
 				0FF31CAD1BE861F600A8B1D6 /* AppDelegate.swift */,
@@ -60,16 +62,17 @@
 				0FF31CB41BE861F600A8B1D6 /* Assets.xcassets */,
 				0FF31CB61BE861F600A8B1D6 /* LaunchScreen.storyboard */,
 				0FF31CB91BE861F600A8B1D6 /* Info.plist */,
+				0FF31CBF1BE8640A00A8B1D6 /* CasualHorizontalLayout.swift */,
 			);
-			path = ExtremeUX;
+			path = CasualUX;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0FF31CA91BE861F600A8B1D6 /* ExtremeUX */ = {
+		0FF31CA91BE861F600A8B1D6 /* CasualUX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0FF31CBC1BE861F600A8B1D6 /* Build configuration list for PBXNativeTarget "ExtremeUX" */;
+			buildConfigurationList = 0FF31CBC1BE861F600A8B1D6 /* Build configuration list for PBXNativeTarget "CasualUX" */;
 			buildPhases = (
 				0FF31CA61BE861F600A8B1D6 /* Sources */,
 				0FF31CA71BE861F600A8B1D6 /* Frameworks */,
@@ -79,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = ExtremeUX;
-			productName = ExtremeUX;
-			productReference = 0FF31CAA1BE861F600A8B1D6 /* ExtremeUX.app */;
+			name = CasualUX;
+			productName = CasualUX;
+			productReference = 0FF31CAA1BE861F600A8B1D6 /* CasualUX.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0FF31CA51BE861F600A8B1D6 /* Build configuration list for PBXProject "ExtremeUX" */;
+			buildConfigurationList = 0FF31CA51BE861F600A8B1D6 /* Build configuration list for PBXProject "CasualUX" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -112,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0FF31CA91BE861F600A8B1D6 /* ExtremeUX */,
+				0FF31CA91BE861F600A8B1D6 /* CasualUX */,
 			);
 		};
 /* End PBXProject section */
@@ -137,6 +140,7 @@
 			files = (
 				0FF31CB01BE861F600A8B1D6 /* ViewController.swift in Sources */,
 				0FF31CAE1BE861F600A8B1D6 /* AppDelegate.swift in Sources */,
+				0FF31CC01BE8640A00A8B1D6 /* CasualHorizontalLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +253,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ExtremeUX/Info.plist;
+				INFOPLIST_FILE = CasualUX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.colordeaf.ExtremeUX;
+				PRODUCT_BUNDLE_IDENTIFIER = net.colordeaf.CasualUX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -260,9 +264,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ExtremeUX/Info.plist;
+				INFOPLIST_FILE = CasualUX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.colordeaf.ExtremeUX;
+				PRODUCT_BUNDLE_IDENTIFIER = net.colordeaf.CasualUX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -270,7 +274,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0FF31CA51BE861F600A8B1D6 /* Build configuration list for PBXProject "ExtremeUX" */ = {
+		0FF31CA51BE861F600A8B1D6 /* Build configuration list for PBXProject "CasualUX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0FF31CBA1BE861F600A8B1D6 /* Debug */,
@@ -279,7 +283,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0FF31CBC1BE861F600A8B1D6 /* Build configuration list for PBXNativeTarget "ExtremeUX" */ = {
+		0FF31CBC1BE861F600A8B1D6 /* Build configuration list for PBXNativeTarget "CasualUX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0FF31CBD1BE861F600A8B1D6 /* Debug */,

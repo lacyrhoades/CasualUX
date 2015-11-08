@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  ExtremeUX
+//  CasualUX
 //
 //  Created by Lacy Rhoades on 11/2/15.
 //  Copyright © 2015 Lacy Rhoades. All rights reserved.
