@@ -171,6 +171,29 @@ class CasualCollectionViewFlowLayout : UICollectionViewFlowLayout {
         
         return false
     }
+    
+    override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        return self.targetContentOffsetForProposedContentOffset(proposedContentOffset)
+    }
+    
+    override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint) -> CGPoint {
+        var offsets = proposedContentOffset
+        
+        if let view = self.collectionView {
+            let collectionDelegate = view.delegate as! FeedCollectionViewDelegate
+            let dx = offsets.x - collectionDelegate.leadingMargin
+            
+            let width = view.frame.size.height * 9.0/16.0 + self.minimumLineSpacing
+            let diff = dx % width
+            if (diff > (width / 2.0) - 15) {
+                offsets.x = min(view.contentSize.width, dx - diff + width)
+            } else {
+                offsets.x = max(0, dx - diff)
+            }
+        }
+        
+        return offsets
+    }
 }
 
 private extension UICollectionView {
