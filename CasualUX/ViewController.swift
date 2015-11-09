@@ -11,12 +11,17 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var collectionView: UICollectionView!
+    
+    var layout: CasualCollectionViewFlowLayout!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let layout = CasualHorizontalLayout()
-        self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
+        self.layout = CasualCollectionViewFlowLayout()
+        self.layout.scrollDirection = .Horizontal
+        self.layout.minimumLineSpacing = 15
+
+        self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: self.layout)
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.collectionView)
         
@@ -49,17 +54,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 48
+        return 300
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Ident", forIndexPath: indexPath)
-        cell.backgroundColor = UIColor.grayColor()
+        cell.backgroundColor = UIColor.lightGrayColor()
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(40, self.collectionView.frame.height)
+        if (self.layout.scrollDirection == .Horizontal) {
+            return CGSizeMake(100, self.collectionView.frame.height)
+        } else {
+            return CGSizeMake(self.collectionView.frame.width, 100)
+        }
     }
 
 }

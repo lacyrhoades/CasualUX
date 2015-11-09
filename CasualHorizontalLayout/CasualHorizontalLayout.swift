@@ -8,9 +8,9 @@
 
 import UIKit
 
-class CasualHorizontalLayout : UICollectionViewFlowLayout {
+class CasualCollectionViewFlowLayout : UICollectionViewFlowLayout {
     
-    var resistance: CGFloat = 500.0
+    var resistance: CGFloat = 800
     var length: CGFloat = 0.0
     var damping: CGFloat = 1.0
     var frequency: CGFloat = 1.0
@@ -18,12 +18,10 @@ class CasualHorizontalLayout : UICollectionViewFlowLayout {
     private var dynamicAnimator: UIDynamicAnimator!
     
     private var visiblePaths: Set<NSIndexPath>!
-    private var latestDelta: CGFloat = 0
+    private var latestDelta: CGPoint = CGPointZero
     
     override init() {
         super.init()
-        self.scrollDirection = .Horizontal
-        self.minimumLineSpacing = 15
         
         self.dynamicAnimator = UIDynamicAnimator(collectionViewLayout: self)
         self.visiblePaths = Set()
@@ -36,22 +34,22 @@ class CasualHorizontalLayout : UICollectionViewFlowLayout {
     override func prepareLayout() {
         super.prepareLayout()
         
-        guard let cv = self.collectionView else { return }
+        let scrollView: UIScrollView = self.collectionView!
         
-        let visibleRect = CGRectInset(cv.bounds, -100, -100)
+        let visibleRect = CGRectInset(scrollView.bounds, -100, -100)
         let itemsInVisibleRect = super.layoutAttributesForElementsInRect(visibleRect)!
         
-        let itemsIndexPathsInVisibleRect = Set(itemsInVisibleRect.map({ (attribute) -> NSIndexPath in
+        let indexPathsInVisibleRect = Set(itemsInVisibleRect.map({ (attribute) -> NSIndexPath in
             return attribute.indexPath
         }))
         
         
-        // PART 1 - REMOVING any old behaviors as cells go away
+        // PART 1 - REMOVING any old behaviors as old cells go away
         
         let noLongerVisisbleBehaviors = self.dynamicAnimator.behaviors.filter { (behavior) -> Bool in
             var currentlyVisible = false
             if let attachmentBehavior = behavior as? UIAttachmentBehavior, last = attachmentBehavior.items.last as? UICollectionViewLayoutAttributes {
-                currentlyVisible = itemsIndexPathsInVisibleRect.contains(last.indexPath)
+                currentlyVisible = indexPathsInVisibleRect.contains(last.indexPath)
             }
             return !currentlyVisible
         }
@@ -64,65 +62,59 @@ class CasualHorizontalLayout : UICollectionViewFlowLayout {
         }
         
         
-        // PART 2 - ADDING any new behaviors as cells appear
+        // PART 2 - ADDING any new behaviors as new cells appear
         
         let newlyVisibleItems = itemsInVisibleRect.filter { (layoutAttribute) -> Bool in
             return !visiblePaths.contains(layoutAttribute.indexPath)
         }
         
-        let scrollView = self.collectionView!
-        
-        var panningTouchLocation: CGPoint
-        if (scrollView.panGestureRecognizer.numberOfTouches() < 1) {
-            panningTouchLocation = CGPointZero
-        } else {
-            panningTouchLocation = scrollView.panGestureRecognizer.locationOfTouch(0, inView: scrollView)
-        }
-        
-        var pannedCellFrame: CGRect = CGRectZero
-        if let view = scrollView.hitTest(panningTouchLocation, withEvent: nil), superview = view.superview as? UICollectionViewCell {
-            pannedCellFrame = superview.frame
-        };
-        
-        let panningLeft = (scrollView.panGestureRecognizer.velocityInView(scrollView).x < 0)
-        
-        var disturbanceOrigin: CGFloat
-        if (panningLeft) {
-            disturbanceOrigin = pannedCellFrame.origin.x + pannedCellFrame.size.width
-        } else {
-            disturbanceOrigin = pannedCellFrame.origin.x
-        }
+        let touchedCellCenter = self.collectionView!.touchedCellCenter()
         
         for item in newlyVisibleItems {
             var center = item.center
             
-            let springBehavior = UIAttachmentBehavior(item: item, attachedToAnchor: center)
+            let attachmentBehavior = UIAttachmentBehavior(item: item, attachedToAnchor: item.center)
             
-            springBehavior.length = self.length
-            springBehavior.damping = self.damping
-            springBehavior.frequency = self.frequency
+            attachmentBehavior.length = self.length
+            attachmentBehavior.damping = self.damping
+            attachmentBehavior.frequency = self.frequency
             
-            if (!CGPointEqualToPoint(CGPointZero, panningTouchLocation)) {
-                let distance = fabs(disturbanceOrigin - springBehavior.anchorPoint.x)
-                let resistance = distance / self.resistance
-                
-                if (self.latestDelta < 0) {
-                    center.x += max(self.latestDelta, self.latestDelta * resistance)
-                } else {
-                    center.x += min(self.latestDelta, self.latestDelta * resistance)
-                }
-                
-                item.center = center
+            let distance = CGPointMake(
+                fabs(touchedCellCenter.x - attachmentBehavior.anchorPoint.x),
+                fabs(touchedCellCenter.y - attachmentBehavior.anchorPoint.y)
+            )
+            
+            let resistance = CGPointMake(
+                distance.x / self.resistance,
+                distance.y / self.resistance
+            )
+
+            var shouldBeSpringy = false
+            if (self.latestDelta.x > 0) {
+                shouldBeSpringy = item.center.x > touchedCellCenter.x
+            } else if (self.latestDelta.x < 0) {
+                shouldBeSpringy = item.center.x < touchedCellCenter.x
+            } else if (self.latestDelta.y > 0) {
+                shouldBeSpringy = item.center.y > touchedCellCenter.y
+            } else if (self.latestDelta.y < 0) {
+                shouldBeSpringy = item.center.y < touchedCellCenter.y
             }
             
-            self.dynamicAnimator.addBehavior(springBehavior)
+            if (shouldBeSpringy) {
+                center.x += self.latestDelta.x * resistance.x
+                center.y += self.latestDelta.y * resistance.y
+            }
+            
+            item.center = center
+            
+            self.dynamicAnimator.addBehavior(attachmentBehavior)
             
             self.visiblePaths.insert(item.indexPath)
         }
     }
     
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        return self.dynamicAnimator.itemsInRect(rect) as? [UICollectionViewLayoutAttributes];
+        return self.dynamicAnimator.itemsInRect(rect) as? [UICollectionViewLayoutAttributes]
     }
     
     override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
@@ -130,55 +122,46 @@ class CasualHorizontalLayout : UICollectionViewFlowLayout {
     }
     
     override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
-        let scrollView = self.collectionView!
+        let touchedCellCenter = self.collectionView!.touchedCellCenter()
         
-        var panningTouchLocation: CGPoint
-        if (scrollView.panGestureRecognizer.numberOfTouches() < 1) {
-            panningTouchLocation = CGPointZero
-        } else {
-            panningTouchLocation = scrollView.panGestureRecognizer.locationOfTouch(0, inView: scrollView)
-        }
+        let scrollView: UIScrollView = self.collectionView!
         
-        var pannedCellFrame: CGRect = CGRectZero
-        if let view = scrollView.hitTest(panningTouchLocation, withEvent: nil), superview = view.superview as? UICollectionViewCell {
-            pannedCellFrame = superview.frame
-        };
-        
-        let panningLeft = (scrollView.panGestureRecognizer.velocityInView(scrollView).x < 0)
-        
-        var disturbanceOrigin: CGFloat
-        if (panningLeft) {
-            disturbanceOrigin = pannedCellFrame.origin.x + pannedCellFrame.size.width
-        } else {
-            disturbanceOrigin = pannedCellFrame.origin.x
-        }
-        
-        self.latestDelta = newBounds.origin.x - scrollView.bounds.origin.x
+        self.latestDelta = CGPointMake(
+            newBounds.origin.x - scrollView.bounds.origin.x,
+            newBounds.origin.y - scrollView.bounds.origin.y
+        )
         
         for behavior in self.dynamicAnimator.behaviors {
             let attachmentBehavior = behavior as! UIAttachmentBehavior
+        
+            let distance = CGPointMake(
+                fabs(touchedCellCenter.x - attachmentBehavior.anchorPoint.x),
+                fabs(touchedCellCenter.y - attachmentBehavior.anchorPoint.y)
+            )
             
-            let distance = fabs(disturbanceOrigin - attachmentBehavior.anchorPoint.x)
-            let resistance = distance / self.resistance
+            let resistance = CGPointMake(
+                distance.x / self.resistance,
+                distance.y / self.resistance
+            )
             
             let item = attachmentBehavior.items.first!
             
             var center = item.center
             
-            var shouldUseBehavior = false;
-            
-            if (panningLeft) {
-                shouldUseBehavior = attachmentBehavior.anchorPoint.x > disturbanceOrigin
-            } else {
-                shouldUseBehavior =  attachmentBehavior.anchorPoint.x < disturbanceOrigin
+            var shouldBeSpringy = false
+            if (self.latestDelta.x > 0) {
+                shouldBeSpringy = item.center.x > touchedCellCenter.x
+            } else if (self.latestDelta.x < 0) {
+                shouldBeSpringy = item.center.x < touchedCellCenter.x
+            } else if (self.latestDelta.y > 0) {
+                shouldBeSpringy = item.center.y > touchedCellCenter.y
+            } else if (self.latestDelta.y < 0) {
+                shouldBeSpringy = item.center.y < touchedCellCenter.y
             }
             
-            if (shouldUseBehavior) {
-                if (self.latestDelta < 0) {
-                    center.x += max(self.latestDelta, self.latestDelta * resistance)
-                } else {
-                    center.x += min(self.latestDelta, self.latestDelta * resistance)
-                }
+            if (shouldBeSpringy) {
+                center.x += self.latestDelta.x * resistance.x
+                center.y += self.latestDelta.y * resistance.y
             }
             
             item.center = center
@@ -187,5 +170,23 @@ class CasualHorizontalLayout : UICollectionViewFlowLayout {
         }
         
         return false
+    }
+}
+
+private extension UICollectionView {
+    func touchedCellCenter() -> CGPoint {
+        let panGesture = self.panGestureRecognizer
+        
+        if (panGesture.numberOfTouches() < 1) {
+            return CGPointZero
+        }
+        
+        let panningTouchLocation = panGesture.locationOfTouch(0, inView: self)
+        
+        if let view = self.hitTest(panningTouchLocation, withEvent: nil), superview = view.superview as? UICollectionViewCell {
+            return superview.center
+        }
+
+        return panningTouchLocation
     }
 }
