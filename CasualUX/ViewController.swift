@@ -17,11 +17,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor.blackColor()
+        
         self.layout = CasualCollectionViewFlowLayout()
         self.layout.scrollDirection = .Horizontal
-        self.layout.minimumLineSpacing = 15
+        self.layout.minimumLineSpacing = 15.0
 
         self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: self.layout)
+        self.collectionView.layer.borderColor = UIColor.whiteColor().CGColor
+        self.collectionView.layer.borderWidth = 1.0
+        self.collectionView.clipsToBounds = false
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.collectionView)
         
@@ -39,15 +44,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func setupConstraints() {
-        let metrics = ["margin": 0]
+        let metrics = ["margin": 25]
         let views = ["collectionView": self.collectionView]
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|[collectionView]|",
+            "H:|-margin-[collectionView]-margin-|",
             options: [],
             metrics: metrics,
             views: views))
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|[collectionView]|",
+            "V:|-margin-[collectionView]-margin-|",
             options: [],
             metrics: metrics,
             views: views))
@@ -65,9 +70,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         if (self.layout.scrollDirection == .Horizontal) {
-            return CGSizeMake(100, self.collectionView.frame.height)
+            return CGSizeMake(50, self.collectionView.frame.height)
         } else {
-            return CGSizeMake(self.collectionView.frame.width, 100)
+            return CGSizeMake(self.collectionView.frame.width, 50)
         }
     }
 
