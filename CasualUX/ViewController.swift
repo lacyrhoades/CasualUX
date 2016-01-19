@@ -12,14 +12,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var collectionView: UICollectionView!
     
-    var layout: CasualCollectionViewFlowLayout!
+    var layout: UICollectionViewFlowLayout!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.blackColor()
         
-        self.layout = CasualCollectionViewFlowLayout()
+        self.layout = SpringyCollectionViewFlowLayout()
         self.layout.scrollDirection = .Horizontal
         self.layout.minimumLineSpacing = 15.0
 
