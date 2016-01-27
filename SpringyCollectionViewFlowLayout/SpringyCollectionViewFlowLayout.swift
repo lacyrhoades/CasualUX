@@ -18,6 +18,9 @@ class SpringyCollectionViewFlowLayout: UICollectionViewFlowLayout {
         
         self.dynamicAnimator = UIDynamicAnimator(collectionViewLayout: self)
         self.visiblePaths = Set()
+        
+        self.scrollDirection = .Horizontal
+        self.minimumLineSpacing = 15.0
     }
     
     required init?(coder aDecoder: NSCoder) {

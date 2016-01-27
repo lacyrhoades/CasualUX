@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2DB3C91C51A20A00866450 /* PhysicsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DB3C81C51A20A00866450 /* PhysicsDemoViewController.swift */; };
+		0F2DB3CB1C51A74500866450 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DB3CA1C51A74500866450 /* DraggableView.swift */; };
+		0F88A40B1C56B49200D349D8 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F88A40A1C56B49200D349D8 /* MainMenuViewController.swift */; };
+		0F88A40E1C56FFC400D349D8 /* CasualCenterBasedFrictionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F88A40D1C56FFC400D349D8 /* CasualCenterBasedFrictionFlowLayout.swift */; };
 		0FD5A1D91C4DD07600EE2FFD /* SpringyCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD5A1D81C4DD07600EE2FFD /* SpringyCollectionViewFlowLayout.swift */; };
 		0FEF83361BF0321500A89704 /* CasualCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEF83351BF0321500A89704 /* CasualCollectionViewFlowLayout.swift */; };
 		0FF31CAE1BE861F600A8B1D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF31CAD1BE861F600A8B1D6 /* AppDelegate.swift */; };
-		0FF31CB01BE861F600A8B1D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF31CAF1BE861F600A8B1D6 /* ViewController.swift */; };
+		0FF31CB01BE861F600A8B1D6 /* CollectionViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF31CAF1BE861F600A8B1D6 /* CollectionViewViewController.swift */; };
 		0FF31CB31BE861F600A8B1D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF31CB11BE861F600A8B1D6 /* Main.storyboard */; };
 		0FF31CB51BE861F600A8B1D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF31CB41BE861F600A8B1D6 /* Assets.xcassets */; };
 		0FF31CB81BE861F600A8B1D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF31CB61BE861F600A8B1D6 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F2DB3C81C51A20A00866450 /* PhysicsDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsDemoViewController.swift; path = PhysicsDemoViewController/PhysicsDemoViewController.swift; sourceTree = "<group>"; };
+		0F2DB3CA1C51A74500866450 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DraggableView.swift; path = PhysicsDemoViewController/DraggableView.swift; sourceTree = "<group>"; };
+		0F88A40A1C56B49200D349D8 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		0F88A40D1C56FFC400D349D8 /* CasualCenterBasedFrictionFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CasualCenterBasedFrictionFlowLayout.swift; path = CasualCenterBasedFrictionFlowLayout/CasualCenterBasedFrictionFlowLayout.swift; sourceTree = "<group>"; };
 		0FD5A1D81C4DD07600EE2FFD /* SpringyCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpringyCollectionViewFlowLayout.swift; path = SpringyCollectionViewFlowLayout/SpringyCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		0FEF83351BF0321500A89704 /* CasualCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasualCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		0FF31CAA1BE861F600A8B1D6 /* CasualUX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CasualUX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF31CAD1BE861F600A8B1D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0FF31CAF1BE861F600A8B1D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0FF31CAF1BE861F600A8B1D6 /* CollectionViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewViewController.swift; sourceTree = "<group>"; };
 		0FF31CB21BE861F600A8B1D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0FF31CB41BE861F600A8B1D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FF31CB71BE861F600A8B1D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +47,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F049CE21C587F2C0066F613 /* PhysicsDemoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F2DB3CA1C51A74500866450 /* DraggableView.swift */,
+				0F2DB3C81C51A20A00866450 /* PhysicsDemoViewController.swift */,
+			);
+			name = PhysicsDemoViewController;
+			sourceTree = "<group>";
+		};
+		0F88A40C1C56FFAE00D349D8 /* CasualCenterBasedFrictionFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				0F88A40D1C56FFC400D349D8 /* CasualCenterBasedFrictionFlowLayout.swift */,
+			);
+			name = CasualCenterBasedFrictionFlowLayout;
+			sourceTree = "<group>";
+		};
 		0FD5A1D71C4DD04F00EE2FFD /* SpringyCollectionViewFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +83,11 @@
 		0FF31CA11BE861F600A8B1D6 = {
 			isa = PBXGroup;
 			children = (
-				0FD5A1D71C4DD04F00EE2FFD /* SpringyCollectionViewFlowLayout */,
-				0FEF83341BF0321500A89704 /* CasualCollectionViewFlowLayout */,
 				0FF31CAC1BE861F600A8B1D6 /* CasualUX */,
+				0F88A40C1C56FFAE00D349D8 /* CasualCenterBasedFrictionFlowLayout */,
+				0FEF83341BF0321500A89704 /* CasualCollectionViewFlowLayout */,
+				0F049CE21C587F2C0066F613 /* PhysicsDemoViewController */,
+				0FD5A1D71C4DD04F00EE2FFD /* SpringyCollectionViewFlowLayout */,
 				0FF31CAB1BE861F600A8B1D6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,7 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				0FF31CAD1BE861F600A8B1D6 /* AppDelegate.swift */,
-				0FF31CAF1BE861F600A8B1D6 /* ViewController.swift */,
+				0F88A40A1C56B49200D349D8 /* MainMenuViewController.swift */,
+				0FF31CAF1BE861F600A8B1D6 /* CollectionViewViewController.swift */,
 				0FF31CB11BE861F600A8B1D6 /* Main.storyboard */,
 				0FF31CB41BE861F600A8B1D6 /* Assets.xcassets */,
 				0FF31CB61BE861F600A8B1D6 /* LaunchScreen.storyboard */,
@@ -158,9 +186,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F2DB3CB1C51A74500866450 /* DraggableView.swift in Sources */,
+				0F2DB3C91C51A20A00866450 /* PhysicsDemoViewController.swift in Sources */,
 				0FEF83361BF0321500A89704 /* CasualCollectionViewFlowLayout.swift in Sources */,
+				0F88A40E1C56FFC400D349D8 /* CasualCenterBasedFrictionFlowLayout.swift in Sources */,
 				0FD5A1D91C4DD07600EE2FFD /* SpringyCollectionViewFlowLayout.swift in Sources */,
-				0FF31CB01BE861F600A8B1D6 /* ViewController.swift in Sources */,
+				0F88A40B1C56B49200D349D8 /* MainMenuViewController.swift in Sources */,
+				0FF31CB01BE861F600A8B1D6 /* CollectionViewViewController.swift in Sources */,
 				0FF31CAE1BE861F600A8B1D6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
