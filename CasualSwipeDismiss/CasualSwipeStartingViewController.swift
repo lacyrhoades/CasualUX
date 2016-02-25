@@ -14,6 +14,13 @@ class CasualSwipeStartingViewController: UIViewController {
     var tappableView: UIView!
     
     override func viewDidLoad() {
+        let label = UILabel(frame: self.view.bounds)
+        label.numberOfLines = 0
+        label.font = UIFont(name: "Helvetica", size: 88.0)
+        label.textColor = UIColor.whiteColor()
+        label.text = "Testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest"
+        self.view.addSubview(label)
+
         let width = self.view.bounds.size.width / 2.0
         let height = self.view.bounds.size.height / 2.0
         

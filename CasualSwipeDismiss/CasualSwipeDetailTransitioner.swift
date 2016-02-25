@@ -167,7 +167,7 @@ class DismissFeedDetailAnimatedTransitioning: NSObject, UIViewControllerAnimated
         return self.duration
     }
     
-    var duration = 5.0
+    var duration = 0.5
     
     var zoomOutFrame: CGRect = CGRectZero
     var snapshotView: UIView!
@@ -183,77 +183,24 @@ class DismissFeedDetailAnimatedTransitioning: NSObject, UIViewControllerAnimated
         let finalFrame = self.zoomOutFrame
         
         self.dismissalImageView = self.snapshotView
-        // self.dismissalImageView.frame = transitionContext.containerView()?.bounds ?? CGRectZero
         self.dismissalImageView.frame = fromView.frame
         transitionContext.containerView()?.addSubview(self.dismissalImageView)
         
         var interstitialFrame = self.dismissalImageView.frame
         interstitialFrame.origin.y += 70
         
-        let path = UIBezierPath()
-        var center = self.dismissalImageView.frame.center()
-        let finalCenter = finalFrame.center()
-        path.moveToPoint(center)
-        center.y += 100
-        path.addLineToPoint(center)
-        center.y += 100
-        path.addLineToPoint(center)
-        path.addLineToPoint(finalCenter)
-        
-        let pathAnimation = CAKeyframeAnimation(keyPath: "position")
-        pathAnimation.duration = 5.0
-        pathAnimation.path = path.CGPath
-        pathAnimation.calculationMode = kCAAnimationPaced
-        pathAnimation.delegate = self
-        pathAnimation.beginTime = 0.0
-        pathAnimation.speed = 1.0
-        pathAnimation.removedOnCompletion = true
-        
-        let widthAnimation = CABasicAnimation(keyPath: "bounds.size.width")
-        widthAnimation.beginTime = 0.0
-        widthAnimation.additive = false
-        widthAnimation.duration = self.duration
-        widthAnimation.delegate = self
-        widthAnimation.speed = 1.0
-        widthAnimation.fromValue = self.dismissalImageView.bounds.width
-        widthAnimation.toValue = finalFrame.size.width / 2.0
-        widthAnimation.removedOnCompletion = true
-        
-        let heightAnimation = CABasicAnimation(keyPath: "bounds.size.height")
-        heightAnimation.beginTime = 0.0
-        heightAnimation.additive = false
-        heightAnimation.duration = self.duration
-        heightAnimation.delegate = self
-        heightAnimation.speed = 1.0
-        heightAnimation.fromValue = self.dismissalImageView.bounds.height
-        heightAnimation.toValue = finalFrame.size.height / 2.0
-        heightAnimation.removedOnCompletion = true
-        
-        let allAnimations = CAAnimationGroup()
-        allAnimations.duration = self.duration
-        allAnimations.animations = [pathAnimation, widthAnimation, heightAnimation]
-        allAnimations.delegate = self
-        allAnimations.removedOnCompletion = true
-        allAnimations.setValue("viewTransformations", forKey: "AnimationName")
-        self.dismissalImageView.layer.addAnimation(allAnimations, forKey: "sizeAndCenterAnimations")
-        
-        //        let halfDuration = self.duration / 2.0
-        //        UIView.animateWithDuration(halfDuration, animations: { () -> Void in
-        //            imageView.frame = interstitialFrame
-        //            }) { (done1) -> Void in
-        //                UIView.animateWithDuration(halfDuration, animations: { () -> Void in
-        //                    imageView.frame = finalFrame
-        //                    }, completion: { (done2) -> Void in
-        //                        imageView.removeFromSuperview()
-        //                        if (transitionContext.transitionWasCancelled()) {
-        //                            fromView.alpha = 1.0
-        //                            transitionContext.completeTransition(false)
-        //                        } else {
-        //                            fromView.removeFromSuperview()
-        //                            transitionContext.completeTransition(true)
-        //                        }
-        //                })
-        //        }
+        UIView.animateWithDuration(self.duration, animations: { () -> Void in
+            self.dismissalImageView.frame = finalFrame
+            }, completion: { (done2) -> Void in
+                self.dismissalImageView.removeFromSuperview()
+                if (transitionContext.transitionWasCancelled()) {
+                    fromView.alpha = 1.0
+                    transitionContext.completeTransition(false)
+                } else {
+                    fromView.removeFromSuperview()
+                    transitionContext.completeTransition(true)
+                }
+        })
     }
     
     override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
