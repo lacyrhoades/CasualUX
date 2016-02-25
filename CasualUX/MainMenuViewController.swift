@@ -43,6 +43,10 @@ class MainMenuViewController: UIViewController, UITableViewDelegate, UITableView
         vc2.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         self.menuItems.append(MenuItem(title: "Physics Demo", vc:vc2))
         
+        let swipeVC = CasualSwipeStartingViewController()
+        swipeVC.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        self.menuItems.append(MenuItem(title: "Swipe-able Dismiss", vc:swipeVC))
+        
         self.tableView = UITableView()
         self.tableView.delegate = self
         self.tableView.dataSource = self
