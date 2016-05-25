@@ -24,6 +24,14 @@ class MainMenuViewController: UIViewController, UITableViewDelegate, UITableView
         
         self.menuItems = []
         
+        let evc = ExplosionTransitionViewController()
+        evc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        self.menuItems.append(MenuItem(title: "Explosion Transition", vc: evc))
+        
+        let cvc = CrossfadeTransitionViewController()
+        cvc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        self.menuItems.append(MenuItem(title: "Crossfade Transition", vc: cvc))
+        
         var vc = CollectionViewViewController()
         vc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         vc.layout = CasualCenterBasedFrictionFlowLayout()
