@@ -39,9 +39,6 @@ class CrossfadeTransitionViewController: UIViewController {
     func didTapCenterView() {
         let vc = BlueViewController()
         
-        self.presentationDelegate = CrossfadeTransitioningDelegate()
-        self.presentationDelegate.duration = 0.5
-        
         vc.modalPresentationStyle = .Custom
         vc.transitioningDelegate = self.presentationDelegate
         self.presentViewController(vc, animated: true) {

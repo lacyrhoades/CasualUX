@@ -9,24 +9,25 @@
 /* Begin PBXBuildFile section */
 		0F2DB3C91C51A20A00866450 /* PhysicsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DB3C81C51A20A00866450 /* PhysicsDemoViewController.swift */; };
 		0F2DB3CB1C51A74500866450 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DB3CA1C51A74500866450 /* DraggableView.swift */; };
-		0F5F8FDD1CF52F9F00822411 /* PresentCrossfadeTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F8FDC1CF52F9F00822411 /* PresentCrossfadeTransitioning.swift */; };
-		0F5F8FE11CF5308300822411 /* DismissCrossfadeTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F8FE01CF5308300822411 /* DismissCrossfadeTransitioning.swift */; };
-		0F5F8FE31CF530F700822411 /* BaseCrossfadeTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F8FE21CF530F700822411 /* BaseCrossfadeTransitioning.swift */; };
-		0F5F8FE61CF5319100822411 /* CrossfadeTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F8FE41CF5319100822411 /* CrossfadeTransitioningDelegate.swift */; };
-		0F5F8FE71CF5319100822411 /* CrossfadeTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F8FE51CF5319100822411 /* CrossfadeTransitionViewController.swift */; };
-		0F5F8FEE1CF532EB00822411 /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F8FE81CF532EB00822411 /* BlueViewController.swift */; };
-		0F5F8FEF1CF532EB00822411 /* DismissExplosionAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F8FE91CF532EB00822411 /* DismissExplosionAnimatedTransitioning.swift */; };
-		0F5F8FF01CF532EB00822411 /* BaseExplosionTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F8FEA1CF532EB00822411 /* BaseExplosionTransitioning.swift */; };
-		0F5F8FF11CF532EB00822411 /* ExplosionTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F8FEB1CF532EB00822411 /* ExplosionTransitionDelegate.swift */; };
-		0F5F8FF21CF532EB00822411 /* PresentExplosionAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F8FEC1CF532EB00822411 /* PresentExplosionAnimatedTransitioning.swift */; };
-		0F5F8FF31CF532EB00822411 /* ExplosionTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F8FED1CF532EB00822411 /* ExplosionTransitionViewController.swift */; };
-		0F5F8FF51CF53C7400822411 /* ExplosionTransitionGeometryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F8FF41CF53C7400822411 /* ExplosionTransitionGeometryDelegate.swift */; };
+		0F5F901A1CF6134700822411 /* CasualSwipeDetailTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F90171CF6134700822411 /* CasualSwipeDetailTransitioner.swift */; };
+		0F5F901B1CF6134700822411 /* CasualSwipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F90181CF6134700822411 /* CasualSwipeDetailViewController.swift */; };
+		0F5F901C1CF6134700822411 /* CasualSwipeStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F90191CF6134700822411 /* CasualSwipeStartingViewController.swift */; };
+		0F5F901F1CF6134E00822411 /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F901D1CF6134E00822411 /* BlueViewController.swift */; };
+		0F5F90201CF6134E00822411 /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F901E1CF6134E00822411 /* TransitionViewController.swift */; };
+		0F5F90261CF6135500822411 /* BaseCrossfadeTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F90211CF6135500822411 /* BaseCrossfadeTransitioning.swift */; };
+		0F5F90271CF6135500822411 /* CrossfadeTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F90221CF6135500822411 /* CrossfadeTransitioningDelegate.swift */; };
+		0F5F90281CF6135500822411 /* CrossfadeTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F90231CF6135500822411 /* CrossfadeTransitionViewController.swift */; };
+		0F5F90291CF6135500822411 /* DismissCrossfadeTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F90241CF6135500822411 /* DismissCrossfadeTransitioning.swift */; };
+		0F5F902A1CF6135500822411 /* PresentCrossfadeTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F90251CF6135500822411 /* PresentCrossfadeTransitioning.swift */; };
+		0F5F90301CF6135B00822411 /* BaseExplosionTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F902B1CF6135B00822411 /* BaseExplosionTransitioning.swift */; };
+		0F5F90311CF6135B00822411 /* DismissExplosionAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F902C1CF6135B00822411 /* DismissExplosionAnimatedTransitioning.swift */; };
+		0F5F90321CF6135B00822411 /* ExplosionTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F902D1CF6135B00822411 /* ExplosionTransitionDelegate.swift */; };
+		0F5F90331CF6135B00822411 /* ExplosionTransitionGeometryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F902E1CF6135B00822411 /* ExplosionTransitionGeometryDelegate.swift */; };
+		0F5F90341CF6135B00822411 /* PresentExplosionAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F902F1CF6135B00822411 /* PresentExplosionAnimatedTransitioning.swift */; };
+		0F5F90361CF613CF00822411 /* TransitionViewController+Explosion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F90351CF613CF00822411 /* TransitionViewController+Explosion.swift */; };
 		0F88A40B1C56B49200D349D8 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F88A40A1C56B49200D349D8 /* MainMenuViewController.swift */; };
 		0F88A40E1C56FFC400D349D8 /* CasualCenterBasedFrictionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F88A40D1C56FFC400D349D8 /* CasualCenterBasedFrictionFlowLayout.swift */; };
 		0FD5A1D91C4DD07600EE2FFD /* SpringyCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD5A1D81C4DD07600EE2FFD /* SpringyCollectionViewFlowLayout.swift */; };
-		0FDC96011C7F6AB200BDD133 /* CasualSwipeStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC96001C7F6AB200BDD133 /* CasualSwipeStartingViewController.swift */; };
-		0FDC96031C7F6BE800BDD133 /* CasualSwipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC96021C7F6BE800BDD133 /* CasualSwipeDetailViewController.swift */; };
-		0FDC96071C7F6D4000BDD133 /* CasualSwipeDetailTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC96041C7F6CF800BDD133 /* CasualSwipeDetailTransitioner.swift */; };
 		0FEF83361BF0321500A89704 /* CasualCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEF83351BF0321500A89704 /* CasualCollectionViewFlowLayout.swift */; };
 		0FF31CAE1BE861F600A8B1D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF31CAD1BE861F600A8B1D6 /* AppDelegate.swift */; };
 		0FF31CB01BE861F600A8B1D6 /* CollectionViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF31CAF1BE861F600A8B1D6 /* CollectionViewViewController.swift */; };
@@ -38,24 +39,25 @@
 /* Begin PBXFileReference section */
 		0F2DB3C81C51A20A00866450 /* PhysicsDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsDemoViewController.swift; path = PhysicsDemoViewController/PhysicsDemoViewController.swift; sourceTree = "<group>"; };
 		0F2DB3CA1C51A74500866450 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DraggableView.swift; path = PhysicsDemoViewController/DraggableView.swift; sourceTree = "<group>"; };
-		0F5F8FDC1CF52F9F00822411 /* PresentCrossfadeTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentCrossfadeTransitioning.swift; path = CrossfadeTransition/PresentCrossfadeTransitioning.swift; sourceTree = "<group>"; };
-		0F5F8FE01CF5308300822411 /* DismissCrossfadeTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DismissCrossfadeTransitioning.swift; path = CrossfadeTransition/DismissCrossfadeTransitioning.swift; sourceTree = "<group>"; };
-		0F5F8FE21CF530F700822411 /* BaseCrossfadeTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCrossfadeTransitioning.swift; path = CrossfadeTransition/BaseCrossfadeTransitioning.swift; sourceTree = "<group>"; };
-		0F5F8FE41CF5319100822411 /* CrossfadeTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrossfadeTransitioningDelegate.swift; path = CrossfadeTransition/CrossfadeTransitioningDelegate.swift; sourceTree = "<group>"; };
-		0F5F8FE51CF5319100822411 /* CrossfadeTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrossfadeTransitionViewController.swift; path = CrossfadeTransition/CrossfadeTransitionViewController.swift; sourceTree = "<group>"; };
-		0F5F8FE81CF532EB00822411 /* BlueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlueViewController.swift; path = ExplosionTransition/BlueViewController.swift; sourceTree = "<group>"; };
-		0F5F8FE91CF532EB00822411 /* DismissExplosionAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DismissExplosionAnimatedTransitioning.swift; path = ExplosionTransition/DismissExplosionAnimatedTransitioning.swift; sourceTree = "<group>"; };
-		0F5F8FEA1CF532EB00822411 /* BaseExplosionTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseExplosionTransitioning.swift; path = ExplosionTransition/BaseExplosionTransitioning.swift; sourceTree = "<group>"; };
-		0F5F8FEB1CF532EB00822411 /* ExplosionTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExplosionTransitionDelegate.swift; path = ExplosionTransition/ExplosionTransitionDelegate.swift; sourceTree = "<group>"; };
-		0F5F8FEC1CF532EB00822411 /* PresentExplosionAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentExplosionAnimatedTransitioning.swift; path = ExplosionTransition/PresentExplosionAnimatedTransitioning.swift; sourceTree = "<group>"; };
-		0F5F8FED1CF532EB00822411 /* ExplosionTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExplosionTransitionViewController.swift; path = ExplosionTransition/ExplosionTransitionViewController.swift; sourceTree = "<group>"; };
-		0F5F8FF41CF53C7400822411 /* ExplosionTransitionGeometryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExplosionTransitionGeometryDelegate.swift; path = ExplosionTransition/ExplosionTransitionGeometryDelegate.swift; sourceTree = "<group>"; };
+		0F5F90171CF6134700822411 /* CasualSwipeDetailTransitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CasualSwipeDetailTransitioner.swift; path = Transitions/CasualSwipeDismiss/CasualSwipeDetailTransitioner.swift; sourceTree = "<group>"; };
+		0F5F90181CF6134700822411 /* CasualSwipeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CasualSwipeDetailViewController.swift; path = Transitions/CasualSwipeDismiss/CasualSwipeDetailViewController.swift; sourceTree = "<group>"; };
+		0F5F90191CF6134700822411 /* CasualSwipeStartingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CasualSwipeStartingViewController.swift; path = Transitions/CasualSwipeDismiss/CasualSwipeStartingViewController.swift; sourceTree = "<group>"; };
+		0F5F901D1CF6134E00822411 /* BlueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlueViewController.swift; path = Transitions/Common/BlueViewController.swift; sourceTree = "<group>"; };
+		0F5F901E1CF6134E00822411 /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionViewController.swift; path = Transitions/Common/TransitionViewController.swift; sourceTree = "<group>"; };
+		0F5F90211CF6135500822411 /* BaseCrossfadeTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCrossfadeTransitioning.swift; path = Transitions/CrossfadeTransition/BaseCrossfadeTransitioning.swift; sourceTree = "<group>"; };
+		0F5F90221CF6135500822411 /* CrossfadeTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrossfadeTransitioningDelegate.swift; path = Transitions/CrossfadeTransition/CrossfadeTransitioningDelegate.swift; sourceTree = "<group>"; };
+		0F5F90231CF6135500822411 /* CrossfadeTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrossfadeTransitionViewController.swift; path = Transitions/CrossfadeTransition/CrossfadeTransitionViewController.swift; sourceTree = "<group>"; };
+		0F5F90241CF6135500822411 /* DismissCrossfadeTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DismissCrossfadeTransitioning.swift; path = Transitions/CrossfadeTransition/DismissCrossfadeTransitioning.swift; sourceTree = "<group>"; };
+		0F5F90251CF6135500822411 /* PresentCrossfadeTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentCrossfadeTransitioning.swift; path = Transitions/CrossfadeTransition/PresentCrossfadeTransitioning.swift; sourceTree = "<group>"; };
+		0F5F902B1CF6135B00822411 /* BaseExplosionTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseExplosionTransitioning.swift; path = Transitions/ExplosionTransition/BaseExplosionTransitioning.swift; sourceTree = "<group>"; };
+		0F5F902C1CF6135B00822411 /* DismissExplosionAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DismissExplosionAnimatedTransitioning.swift; path = Transitions/ExplosionTransition/DismissExplosionAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		0F5F902D1CF6135B00822411 /* ExplosionTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExplosionTransitionDelegate.swift; path = Transitions/ExplosionTransition/ExplosionTransitionDelegate.swift; sourceTree = "<group>"; };
+		0F5F902E1CF6135B00822411 /* ExplosionTransitionGeometryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExplosionTransitionGeometryDelegate.swift; path = Transitions/ExplosionTransition/ExplosionTransitionGeometryDelegate.swift; sourceTree = "<group>"; };
+		0F5F902F1CF6135B00822411 /* PresentExplosionAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentExplosionAnimatedTransitioning.swift; path = Transitions/ExplosionTransition/PresentExplosionAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		0F5F90351CF613CF00822411 /* TransitionViewController+Explosion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TransitionViewController+Explosion.swift"; path = "Transitions/ExplosionTransition/TransitionViewController+Explosion.swift"; sourceTree = "<group>"; };
 		0F88A40A1C56B49200D349D8 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		0F88A40D1C56FFC400D349D8 /* CasualCenterBasedFrictionFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CasualCenterBasedFrictionFlowLayout.swift; path = CasualCenterBasedFrictionFlowLayout/CasualCenterBasedFrictionFlowLayout.swift; sourceTree = "<group>"; };
 		0FD5A1D81C4DD07600EE2FFD /* SpringyCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpringyCollectionViewFlowLayout.swift; path = SpringyCollectionViewFlowLayout/SpringyCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		0FDC96001C7F6AB200BDD133 /* CasualSwipeStartingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CasualSwipeStartingViewController.swift; path = CasualSwipeDismiss/CasualSwipeStartingViewController.swift; sourceTree = "<group>"; };
-		0FDC96021C7F6BE800BDD133 /* CasualSwipeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CasualSwipeDetailViewController.swift; path = CasualSwipeDismiss/CasualSwipeDetailViewController.swift; sourceTree = "<group>"; };
-		0FDC96041C7F6CF800BDD133 /* CasualSwipeDetailTransitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CasualSwipeDetailTransitioner.swift; path = CasualSwipeDismiss/CasualSwipeDetailTransitioner.swift; sourceTree = "<group>"; };
 		0FEF83351BF0321500A89704 /* CasualCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasualCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		0FF31CAA1BE861F600A8B1D6 /* CasualUX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CasualUX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF31CAD1BE861F600A8B1D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,13 +91,12 @@
 		0F5F8FCA1CF2225E00822411 /* ExplosionTransition */ = {
 			isa = PBXGroup;
 			children = (
-				0F5F8FEA1CF532EB00822411 /* BaseExplosionTransitioning.swift */,
-				0F5F8FE81CF532EB00822411 /* BlueViewController.swift */,
-				0F5F8FE91CF532EB00822411 /* DismissExplosionAnimatedTransitioning.swift */,
-				0F5F8FEB1CF532EB00822411 /* ExplosionTransitionDelegate.swift */,
-				0F5F8FED1CF532EB00822411 /* ExplosionTransitionViewController.swift */,
-				0F5F8FEC1CF532EB00822411 /* PresentExplosionAnimatedTransitioning.swift */,
-				0F5F8FF41CF53C7400822411 /* ExplosionTransitionGeometryDelegate.swift */,
+				0F5F902B1CF6135B00822411 /* BaseExplosionTransitioning.swift */,
+				0F5F902C1CF6135B00822411 /* DismissExplosionAnimatedTransitioning.swift */,
+				0F5F902D1CF6135B00822411 /* ExplosionTransitionDelegate.swift */,
+				0F5F902E1CF6135B00822411 /* ExplosionTransitionGeometryDelegate.swift */,
+				0F5F902F1CF6135B00822411 /* PresentExplosionAnimatedTransitioning.swift */,
+				0F5F90351CF613CF00822411 /* TransitionViewController+Explosion.swift */,
 			);
 			name = ExplosionTransition;
 			sourceTree = "<group>";
@@ -103,13 +104,33 @@
 		0F5F8FD71CF52EA400822411 /* CrossfadeTransition */ = {
 			isa = PBXGroup;
 			children = (
-				0F5F8FE21CF530F700822411 /* BaseCrossfadeTransitioning.swift */,
-				0F5F8FE41CF5319100822411 /* CrossfadeTransitioningDelegate.swift */,
-				0F5F8FE51CF5319100822411 /* CrossfadeTransitionViewController.swift */,
-				0F5F8FE01CF5308300822411 /* DismissCrossfadeTransitioning.swift */,
-				0F5F8FDC1CF52F9F00822411 /* PresentCrossfadeTransitioning.swift */,
+				0F5F90211CF6135500822411 /* BaseCrossfadeTransitioning.swift */,
+				0F5F90221CF6135500822411 /* CrossfadeTransitioningDelegate.swift */,
+				0F5F90231CF6135500822411 /* CrossfadeTransitionViewController.swift */,
+				0F5F90241CF6135500822411 /* DismissCrossfadeTransitioning.swift */,
+				0F5F90251CF6135500822411 /* PresentCrossfadeTransitioning.swift */,
 			);
 			name = CrossfadeTransition;
+			sourceTree = "<group>";
+		};
+		0F5F90151CF612F100822411 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				0F5F90161CF6130400822411 /* Common */,
+				0F5F8FCA1CF2225E00822411 /* ExplosionTransition */,
+				0F5F8FD71CF52EA400822411 /* CrossfadeTransition */,
+				0FDC95FF1C7F6A8E00BDD133 /* CasualSwipeDismiss */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
+		0F5F90161CF6130400822411 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0F5F901D1CF6134E00822411 /* BlueViewController.swift */,
+				0F5F901E1CF6134E00822411 /* TransitionViewController.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		0F88A40C1C56FFAE00D349D8 /* CasualCenterBasedFrictionFlowLayout */ = {
@@ -131,9 +152,9 @@
 		0FDC95FF1C7F6A8E00BDD133 /* CasualSwipeDismiss */ = {
 			isa = PBXGroup;
 			children = (
-				0FDC96001C7F6AB200BDD133 /* CasualSwipeStartingViewController.swift */,
-				0FDC96021C7F6BE800BDD133 /* CasualSwipeDetailViewController.swift */,
-				0FDC96041C7F6CF800BDD133 /* CasualSwipeDetailTransitioner.swift */,
+				0F5F90171CF6134700822411 /* CasualSwipeDetailTransitioner.swift */,
+				0F5F90181CF6134700822411 /* CasualSwipeDetailViewController.swift */,
+				0F5F90191CF6134700822411 /* CasualSwipeStartingViewController.swift */,
 			);
 			name = CasualSwipeDismiss;
 			sourceTree = "<group>";
@@ -149,9 +170,7 @@
 		0FF31CA11BE861F600A8B1D6 = {
 			isa = PBXGroup;
 			children = (
-				0F5F8FCA1CF2225E00822411 /* ExplosionTransition */,
-				0F5F8FD71CF52EA400822411 /* CrossfadeTransition */,
-				0FDC95FF1C7F6A8E00BDD133 /* CasualSwipeDismiss */,
+				0F5F90151CF612F100822411 /* Transitions */,
 				0FF31CAC1BE861F600A8B1D6 /* CasualUX */,
 				0F88A40C1C56FFAE00D349D8 /* CasualCenterBasedFrictionFlowLayout */,
 				0FEF83341BF0321500A89704 /* CasualCollectionViewFlowLayout */,
@@ -255,29 +274,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F5F8FE11CF5308300822411 /* DismissCrossfadeTransitioning.swift in Sources */,
-				0F5F8FE31CF530F700822411 /* BaseCrossfadeTransitioning.swift in Sources */,
 				0F2DB3CB1C51A74500866450 /* DraggableView.swift in Sources */,
+				0F5F90271CF6135500822411 /* CrossfadeTransitioningDelegate.swift in Sources */,
+				0F5F90321CF6135B00822411 /* ExplosionTransitionDelegate.swift in Sources */,
 				0F2DB3C91C51A20A00866450 /* PhysicsDemoViewController.swift in Sources */,
+				0F5F90291CF6135500822411 /* DismissCrossfadeTransitioning.swift in Sources */,
+				0F5F902A1CF6135500822411 /* PresentCrossfadeTransitioning.swift in Sources */,
+				0F5F90261CF6135500822411 /* BaseCrossfadeTransitioning.swift in Sources */,
 				0FEF83361BF0321500A89704 /* CasualCollectionViewFlowLayout.swift in Sources */,
-				0F5F8FF11CF532EB00822411 /* ExplosionTransitionDelegate.swift in Sources */,
-				0F5F8FEF1CF532EB00822411 /* DismissExplosionAnimatedTransitioning.swift in Sources */,
-				0FDC96031C7F6BE800BDD133 /* CasualSwipeDetailViewController.swift in Sources */,
+				0F5F90311CF6135B00822411 /* DismissExplosionAnimatedTransitioning.swift in Sources */,
+				0F5F90361CF613CF00822411 /* TransitionViewController+Explosion.swift in Sources */,
+				0F5F901B1CF6134700822411 /* CasualSwipeDetailViewController.swift in Sources */,
+				0F5F90341CF6135B00822411 /* PresentExplosionAnimatedTransitioning.swift in Sources */,
+				0F5F90281CF6135500822411 /* CrossfadeTransitionViewController.swift in Sources */,
 				0F88A40E1C56FFC400D349D8 /* CasualCenterBasedFrictionFlowLayout.swift in Sources */,
+				0F5F901A1CF6134700822411 /* CasualSwipeDetailTransitioner.swift in Sources */,
 				0FD5A1D91C4DD07600EE2FFD /* SpringyCollectionViewFlowLayout.swift in Sources */,
-				0F5F8FF21CF532EB00822411 /* PresentExplosionAnimatedTransitioning.swift in Sources */,
-				0F5F8FE61CF5319100822411 /* CrossfadeTransitioningDelegate.swift in Sources */,
+				0F5F901C1CF6134700822411 /* CasualSwipeStartingViewController.swift in Sources */,
 				0F88A40B1C56B49200D349D8 /* MainMenuViewController.swift in Sources */,
-				0FDC96071C7F6D4000BDD133 /* CasualSwipeDetailTransitioner.swift in Sources */,
-				0F5F8FF31CF532EB00822411 /* ExplosionTransitionViewController.swift in Sources */,
-				0F5F8FEE1CF532EB00822411 /* BlueViewController.swift in Sources */,
 				0FF31CB01BE861F600A8B1D6 /* CollectionViewViewController.swift in Sources */,
-				0FDC96011C7F6AB200BDD133 /* CasualSwipeStartingViewController.swift in Sources */,
+				0F5F90331CF6135B00822411 /* ExplosionTransitionGeometryDelegate.swift in Sources */,
+				0F5F901F1CF6134E00822411 /* BlueViewController.swift in Sources */,
 				0FF31CAE1BE861F600A8B1D6 /* AppDelegate.swift in Sources */,
-				0F5F8FF51CF53C7400822411 /* ExplosionTransitionGeometryDelegate.swift in Sources */,
-				0F5F8FDD1CF52F9F00822411 /* PresentCrossfadeTransitioning.swift in Sources */,
-				0F5F8FE71CF5319100822411 /* CrossfadeTransitionViewController.swift in Sources */,
-				0F5F8FF01CF532EB00822411 /* BaseExplosionTransitioning.swift in Sources */,
+				0F5F90301CF6135B00822411 /* BaseExplosionTransitioning.swift in Sources */,
+				0F5F90201CF6134E00822411 /* TransitionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

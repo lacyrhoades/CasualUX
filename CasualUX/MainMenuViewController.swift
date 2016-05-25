@@ -24,36 +24,46 @@ class MainMenuViewController: UIViewController, UITableViewDelegate, UITableView
         
         self.menuItems = []
         
-        let evc = ExplosionTransitionViewController()
-        evc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        self.menuItems.append(MenuItem(title: "Explosion Transition", vc: evc))
+        do {
+            let vc = TransitionViewController()
+            let del = ExplosionTransitionDelegate()
+            del.duration = 0.5
+            del.zoomingView = vc.centerView
+            del.geometryDelegate = vc
+            vc.presentationDelegate = del
+            self.addViewController(vc, title: "Explosion Transition")
+        }
         
-        let cvc = CrossfadeTransitionViewController()
-        cvc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        self.menuItems.append(MenuItem(title: "Crossfade Transition", vc: cvc))
+        do {
+            let vc = TransitionViewController()
+            let del = CrossfadeTransitioningDelegate()
+            del.duration = 0.5
+            vc.presentationDelegate = del
+            self.addViewController(vc, title: "Crossfade Transition")
+        }
         
-        var vc = CollectionViewViewController()
-        vc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        vc.layout = CasualCenterBasedFrictionFlowLayout()
-        self.menuItems.append(MenuItem(title: "Simple Friction (center-based)", vc: vc))
+        do {
+            let vc = CasualSwipeStartingViewController()
+            self.addViewController(vc, title: "Interactive Swipe Transition")
+        }
         
-        vc = CollectionViewViewController()
-        vc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        vc.layout = CasualCollectionViewFlowLayout()
-        self.menuItems.append(MenuItem(title: "Friction Collection (physics)", vc: vc))
+        do {
+            let vc = CollectionViewViewController()
+            vc.layout = CasualCenterBasedFrictionFlowLayout()
+            self.addViewController(vc, title: "Center-based Friction Layout")
+        }
         
-        vc = CollectionViewViewController()
-        vc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        vc.layout = SpringyCollectionViewFlowLayout()
-        self.menuItems.append(MenuItem(title: "Springy Collection (physics)", vc:vc))
+        do {
+            let vc = CollectionViewViewController()
+            vc.layout = CasualCollectionViewFlowLayout()
+            self.addViewController(vc, title: "Casual Flow Layout")
+        }
         
-        let vc2 = UIViewController()
-        vc2.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        self.menuItems.append(MenuItem(title: "Physics Demo", vc:vc2))
-        
-        let swipeVC = CasualSwipeStartingViewController()
-        swipeVC.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        self.menuItems.append(MenuItem(title: "Swipe-able Dismiss", vc:swipeVC))
+        do {
+            let vc = CollectionViewViewController()
+            vc.layout = SpringyCollectionViewFlowLayout()
+            self.addViewController(vc, title: "Springy Flow Layout")
+        }
         
         self.tableView = UITableView()
         self.tableView.delegate = self
@@ -64,6 +74,11 @@ class MainMenuViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "MenuTableCell")
         
         self.setupConstraints()
+    }
+    
+    func addViewController(vc: UIViewController, title: String) {
+        vc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        self.menuItems.append(MenuItem(title: title, vc: vc))
     }
     
     func setupConstraints() {

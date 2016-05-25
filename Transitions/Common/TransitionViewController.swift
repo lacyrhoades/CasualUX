@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ExplosionTransitionViewController: UIViewController {
-    var centerView: UIView!
-    var presentationDelegate: ExplosionTransitionDelegate!
+class TransitionViewController: UIViewController {
+    var centerView = UIView()
+    var presentationDelegate: UIViewControllerTransitioningDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,6 @@ class ExplosionTransitionViewController: UIViewController {
         backgroundView.backgroundColor = UIColor.lightGrayColor()
         self.view.addSubview(backgroundView)
         
-        self.centerView = UIView()
         self.centerView.backgroundColor = UIColor.blueColor()
         self.centerView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.centerView)
@@ -38,11 +37,6 @@ class ExplosionTransitionViewController: UIViewController {
     
     func didTapCenterView() {
         let vc = BlueViewController()
-        
-        self.presentationDelegate = ExplosionTransitionDelegate()
-        self.presentationDelegate.duration = 0.5
-        self.presentationDelegate.zoomingView = self.centerView
-        self.presentationDelegate.geometryDelegate = self
         
         vc.modalPresentationStyle = .Custom
         vc.transitioningDelegate = self.presentationDelegate
@@ -62,11 +56,5 @@ class ExplosionTransitionViewController: UIViewController {
     
     override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
         return .Slide
-    }
-}
-
-extension ExplosionTransitionViewController: ExplosionTransitionGeometryDelegate {
-    func zoomOutRect() -> CGRect {
-        return self.centerView.frame
     }
 }
