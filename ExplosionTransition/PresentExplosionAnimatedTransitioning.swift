@@ -23,12 +23,7 @@ class PresentExplosionAnimatedTransitioning: BaseExplosionTransitioning, UIViewC
                 return
         }
         
-        let snapshotView = fromVC.view.snapshotViewAfterScreenUpdates(true)
-        UIGraphicsBeginImageContextWithOptions(snapshotView.bounds.size, true, UIScreen.mainScreen().scale)
-        snapshotView.drawViewHierarchyInRect(snapshotView.bounds, afterScreenUpdates: true)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        let snapshot = UIImageView(image:image)
+        let snapshot = self.snapshotView(fromVC.view)
         
         let coverupView = UIView()
         coverupView.backgroundColor = UIColor.blackColor()

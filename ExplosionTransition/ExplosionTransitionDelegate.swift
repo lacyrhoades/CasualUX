@@ -36,13 +36,8 @@ class ExplosionTransitionDelegate: NSObject, UIViewControllerTransitioningDelega
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let animator = DismissExplosionAnimatedTransitioning()
         animator.duration = self.duration
-        
-        let snapshotView = dismissed.view.snapshotViewAfterScreenUpdates(true)
-        UIGraphicsBeginImageContextWithOptions(snapshotView.bounds.size, true, UIScreen.mainScreen().scale)
-        snapshotView.drawViewHierarchyInRect(snapshotView.bounds, afterScreenUpdates: true)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        animator.zoomingView = UIImageView(image:image)
+
+        animator.zoomingView = dismissed.view.snapshotViewAfterScreenUpdates(true)
         
         if let delegate = self.geometryDelegate {
             animator.zoomOutFrame = delegate.zoomOutRect()

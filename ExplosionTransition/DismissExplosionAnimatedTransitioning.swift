@@ -21,12 +21,7 @@ class DismissExplosionAnimatedTransitioning: BaseExplosionTransitioning, UIViewC
                 return
         }
         
-        let snapshotView = toVC.view.snapshotViewAfterScreenUpdates(true)
-        UIGraphicsBeginImageContextWithOptions(snapshotView.bounds.size, true, UIScreen.mainScreen().scale)
-        snapshotView.drawViewHierarchyInRect(snapshotView.bounds, afterScreenUpdates: true)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        let snapshot = UIImageView(image:image)
+        let snapshot = self.snapshotView(toVC.view)
         
         self.dismissalTransitionContext = transitionContext
         

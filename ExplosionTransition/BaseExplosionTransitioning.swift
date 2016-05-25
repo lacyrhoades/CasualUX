@@ -89,4 +89,12 @@ class BaseExplosionTransitioning: NSObject {
             return AnimatedViewPiece(startingFrame: endingFrame, endingFrame: startingFrame, view: pieceView)
         }
     }
+    
+    func snapshotView(view: UIView) -> UIView {
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, UIScreen.mainScreen().scale);
+        view.layer.renderInContext(UIGraphicsGetCurrentContext()!);
+        let img = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return UIImageView(image: img)
+    }
 }
